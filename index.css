@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 20px auto;
+}
+
+img {
+    width: 150px;
+    margin: 0 auto;
+}
+
+input {
+    color:#534d4d;
+    background-color: #FFF9C9;
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+button {
+    color: #fff;
+    background-color: #FF8989;
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
