@@ -1,6 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, push } from 
-"https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import {
+  getDatabase,
+  ref,
+  push,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
   databaseURL:
@@ -16,7 +19,7 @@ const add_button = document.getElementById("add-button");
 
 add_button.addEventListener("click", function () {
   let inputVal = item.value;
-  push(itemsInDB, inputVal)
+  push(itemsInDB, inputVal);
 
   console.log(`${inputVal} added to database`);
 });
