@@ -21,22 +21,33 @@ const groceryList = document.getElementById("grocery-list");
 
 add_button.addEventListener("click", function () {
   let inputVal = item.value;
+
   push(itemsInDB, inputVal);
 
   clearItem();
 });
 
-onValue(itemsInDB, function (snapshot) {
-  let itemsArray = Object.values(snapshot.val());
+onValue(itemsInDB, function(snapshot) {
+  let itemsArray = Object.entries(snapshot.val());
 
   clearGroceryItem();
+
   for (let i = 0; i < itemsArray.length; i++) {
-    appendItem(itemsArray[i]);
+    let currentItem = itemsArray[i];
+    let currentItemID = currentItem[0];
+    let currentItemValue = currentItem[1];
+
+    appendItem(currentItem);
   }
 });
 
-function appendItem(inputVal) {
-  groceryList.innerHTML += `<li>${inputVal}</li>`;
+function appendItem(item) {
+  let itemID = item[0];
+  let itemValue = item[1];
+
+  let newLi = document.createElement("li");
+  newLi.textContent = itemValue
+  groceryList.append(newLi);
 }
 
 function clearGroceryItem() {
