@@ -24,27 +24,25 @@ add_button.addEventListener("click", function () {
   push(itemsInDB, inputVal);
 
   clearItem();
-})
- 
-onValue(itemsInDB, function(snapshot) {
-  let itemsArray = Object.values(snapshot.val())
-  
+});
+
+onValue(itemsInDB, function (snapshot) {
+  let itemsArray = Object.values(snapshot.val());
+
   clearGroceryItem();
   for (let i = 0; i < itemsArray.length; i++) {
-
-    appendItem(itemsArray[i])
+    appendItem(itemsArray[i]);
   }
-})
-
+});
 
 function appendItem(inputVal) {
-    groceryList.innerHTML += `<li>${inputVal}</li>`;
+  groceryList.innerHTML += `<li>${inputVal}</li>`;
 }
 
 function clearGroceryItem() {
-  groceryList.innerHTML = ""
+  groceryList.innerHTML = "";
 }
 
 function clearItem() {
-    item.value = "";
+  item.value = "";
 }
