@@ -21,11 +21,14 @@ const add_button = document.getElementById("add-button");
 const groceryList = document.getElementById("grocery-list");
 
 add_button.addEventListener("click", function () {
-  let inputVal = item.value;
+  let inputVal = item.value.trim(); 
 
-  push(itemsInDB, inputVal);
-
-  clearItem();
+  if (inputVal !== "") {
+    push(itemsInDB, inputVal);
+    clearItem();
+  } else {
+    alert("Please input an item first.");
+  }
 });
 
 onValue(itemsInDB, function (snapshot) {
