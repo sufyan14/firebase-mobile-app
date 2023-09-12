@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: #dfd2df;
   font-family: "Rubik", sans-serif;
+  user-select: none;
 }
 
 .container {
@@ -19,7 +20,7 @@ img {
 
 input {
     color:#534d4d;
-    background-color: #FFF9C9;
+    background-color: #f9f2bd;
     text-align: center;
     font-family: "Rubik", sans-serif;
     border: 0;
@@ -38,6 +39,10 @@ button {
     padding: 15px;
     border-radius: 8px;
     font-size: 20px;
+}
+
+button:hover {
+    background-color: #bf4e4e;
     cursor: pointer;
 }
 
@@ -50,12 +55,18 @@ ul {
 }
 
 ul li {
-    background-color: #FFF9C9;
+    background-color: #e9e8dd;
+    color: #301504;
     box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
     font-size: 18px;
     text-align: center;
     flex-grow: 1;
     padding: 12px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
+ul li:hover {
+    background-color: #f9f2bd;
+    cursor: pointer;
+}

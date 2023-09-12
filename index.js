@@ -4,6 +4,7 @@ import {
   ref,
   push,
   onValue,
+  remove,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -27,17 +28,21 @@ add_button.addEventListener("click", function () {
   clearItem();
 });
 
-onValue(itemsInDB, function(snapshot) {
-  let itemsArray = Object.entries(snapshot.val());
+onValue(itemsInDB, function (snapshot) {
+  if (snapshot.exists()) {
+    let itemsArray = Object.entries(snapshot.val());
 
-  clearGroceryItem();
+    clearGroceryItem();
 
-  for (let i = 0; i < itemsArray.length; i++) {
-    let currentItem = itemsArray[i];
-    let currentItemID = currentItem[0];
-    let currentItemValue = currentItem[1];
+    for (let i = 0; i < itemsArray.length; i++) {
+      let currentItem = itemsArray[i];
+      let currentItemID = currentItem[0];
+      let currentItemValue = currentItem[1];
 
-    appendItem(currentItem);
+      appendItem(currentItem);
+    }
+  } else {
+    groceryList.innerHTML = "Item list is empty";
   }
 });
 
@@ -46,7 +51,14 @@ function appendItem(item) {
   let itemValue = item[1];
 
   let newLi = document.createElement("li");
-  newLi.textContent = itemValue
+  newLi.textContent = itemValue;
+
+  // Remove item from DB
+  newLi.addEventListener("click", function () {
+    let locOfItemInDB = ref(database, `items/${itemID}`);
+    remove(locOfItemInDB);
+  });
+
   groceryList.append(newLi);
 }
 
