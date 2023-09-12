@@ -1,72 +1,84 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #dfd2df;
+  background-color: #b0dbde;
   font-family: "Rubik", sans-serif;
   user-select: none;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    max-width: 320px;
-    margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: 20px auto;
+}
+
+h1 {
+  text-align: center;
+  color: #53c7c1;
+  font-family: Helvetica;
+  font-size: 36px;
+  text-shadow: 2px 1px 2px #02204a;
 }
 
 img {
-    width: 150px;
-    margin: 0 auto;
+  width: 150px;
+  margin: 0 auto;
 }
 
 input {
-    color:#534d4d;
-    background-color: #f9f2bd;
-    text-align: center;
-    font-family: "Rubik", sans-serif;
-    border: 0;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 20px;
-    margin: 10px 0;
+  color: #1d5cc9;
+  background-color: #92cae0;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  border: 0;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+input::placeholder {
+  color: #1d5cc9;
 }
 
 button {
-    color: #fff;
-    background-color: #FF8989;
-    text-align: center;
-    font-family: "Rubik", sans-serif;
-    border: 0;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 20px;
+  color: #fff;
+  background-color: #1d5cc9;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  border: 0;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 20px;
 }
 
 button:hover {
-    background-color: #bf4e4e;
-    cursor: pointer;
+  background-color: #02204a;
+  cursor: pointer;
 }
 
 ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
 }
 
 ul li {
-    background-color: #e9e8dd;
-    color: #301504;
-    box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
-    font-size: 18px;
-    text-align: center;
-    flex-grow: 1;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
+  background-color: #92cae0;
+  color: #1d5cc9;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  text-align: center;
+  flex-grow: 1;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 ul li:hover {
-    background-color: #f9f2bd;
-    cursor: pointer;
+  background-color: #7c9bd1;
+  cursor: pointer;
 }
